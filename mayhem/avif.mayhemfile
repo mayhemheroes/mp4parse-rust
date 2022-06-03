@@ -1,0 +1,4 @@
+project: PROJECT
+target: avif
+cmds:
+- cmd: /out/avif
