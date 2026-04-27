@@ -20,7 +20,7 @@ jobs:
         - os: ubuntu-latest
           triplet: x64-linux
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: Log in to the Container registry
@@ -48,8 +48,3 @@ jobs:
         mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
         args: --image ${{ steps.meta.outputs.tags }} --cmd /out/avif --target avif
           --file mayhem/avif.mayhemfile
-        sarif-output: sarif
-    - name: Upload SARIF file(s)
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: sarif
